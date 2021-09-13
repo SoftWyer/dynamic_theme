@@ -11,19 +11,19 @@ void main() {
     await tester.pumpWidget(MyApp());
 
     MaterialApp app = find.byType(MaterialApp).evaluate().first.widget as MaterialApp;
-    expect(app.theme!.brightness, equals(Brightness.dark));
+    expect(app.theme?.brightness, equals(Brightness.dark));
 
     await tester.tap(find.byKey(key));
     await tester.pumpAndSettle();
 
     app = find.byType(MaterialApp).evaluate().first.widget as MaterialApp;
-    expect(app.theme!.brightness, equals(Brightness.light));
+    expect(app.theme?.brightness, equals(Brightness.light));
 
     await tester.tap(find.byKey(key));
     await tester.pumpAndSettle();
 
     app = find.byType(MaterialApp).evaluate().first.widget as MaterialApp;
-    expect(app.theme!.brightness, equals(Brightness.dark));
+    expect(app.theme?.brightness, equals(Brightness.dark));
   });
 }
 
@@ -55,7 +55,7 @@ class ButtonPage extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {
         DynamicTheme.of(context)
-            .setBrightness(Theme.of(context).brightness == Brightness.dark ? Brightness.light : Brightness.dark);
+            ?.setBrightness(Theme.of(context).brightness == Brightness.dark ? Brightness.light : Brightness.dark);
       },
       key: key,
       child: Container(),

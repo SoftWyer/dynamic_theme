@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BrightnessSwitcherDialog extends StatelessWidget {
-  const BrightnessSwitcherDialog({Key? key, this.onSelectedTheme})
-      : super(key: key);
+  const BrightnessSwitcherDialog({Key? key, this.onSelectedTheme}) : super(key: key);
 
   final ValueChanged<Brightness>? onSelectedTheme;
 
@@ -15,7 +14,7 @@ class BrightnessSwitcherDialog extends StatelessWidget {
           value: Brightness.light,
           groupValue: Theme.of(context).brightness,
           onChanged: (Brightness? value) {
-            onSelectedTheme!(Brightness.light);
+            onSelectedTheme?.call(Brightness.light);
           },
           title: const Text('Light'),
         ),
@@ -23,7 +22,7 @@ class BrightnessSwitcherDialog extends StatelessWidget {
           value: Brightness.dark,
           groupValue: Theme.of(context).brightness,
           onChanged: (Brightness? value) {
-            onSelectedTheme!(Brightness.dark);
+            onSelectedTheme?.call(Brightness.dark);
           },
           title: const Text('Spooky  👻'),
         ),

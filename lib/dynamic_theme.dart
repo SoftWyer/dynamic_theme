@@ -10,8 +10,8 @@ typedef ThemeDataWithBrightnessBuilder = ThemeData Function(Brightness brightnes
 class DynamicTheme extends StatefulWidget {
   const DynamicTheme({
     Key? key,
-    this.data,
-    this.themedWidgetBuilder,
+    required this.data,
+    required this.themedWidgetBuilder,
     this.defaultBrightness = Brightness.light,
     this.loadBrightnessOnStart = true,
   }) : super(key: key);
@@ -35,8 +35,8 @@ class DynamicTheme extends StatefulWidget {
   @override
   DynamicThemeState createState() => DynamicThemeState();
 
-  static DynamicThemeState of(BuildContext context) {
-    return context.findAncestorStateOfType<State<DynamicTheme>>() as DynamicThemeState;
+  static DynamicThemeState? of(BuildContext context) {
+    return context.findAncestorStateOfType<DynamicThemeState>();
   }
 }
 
@@ -45,7 +45,7 @@ class DynamicThemeState extends State<DynamicTheme> {
 
   Brightness _brightness = Brightness.light;
 
-  late bool _shouldLoadBrightness;
+  bool _shouldLoadBrightness = true;
 
   static const String _sharedPreferencesKey = 'isDark';
 

@@ -12,3 +12,6 @@ ios/Runner/GeneratedPluginRegistrant.*
 .idea/*
 
 pubspec.lock
+
+# FVM Version Cache
+.fvm/

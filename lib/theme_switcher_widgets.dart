@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class BrightnessSwitcherDialog extends StatelessWidget {
   const BrightnessSwitcherDialog({Key? key, this.onSelectedTheme}) : super(key: key);

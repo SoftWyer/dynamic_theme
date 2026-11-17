@@ -1,5 +1,5 @@
 import 'package:dynamic_theme/dynamic_theme.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 ValueKey<String> key = const ValueKey<String>('ok');
